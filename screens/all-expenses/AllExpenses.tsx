@@ -1,11 +1,16 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
+
+import ExpensesOutput from "@/components/expenses-output/ExpensesOutput";
+
+import { DUMMY_EXPENSES } from "@/data/expensesDammyData";
+
 import { styles } from "./styles";
 
 const AllExpenses = () => {
   return (
     <View style={styles.allExpensesContainer}>
-      <Text>All Expenses</Text>
+      <ExpensesOutput expensesPeriod="total" expenses={DUMMY_EXPENSES} />
     </View>
   );
 };
