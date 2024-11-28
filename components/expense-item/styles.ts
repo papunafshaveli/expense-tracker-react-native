@@ -22,6 +22,11 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.4,
     shadowRadius: 3,
   },
+
+  pressedExpenseItem: {
+    opacity: 0.8,
+  },
+
   text: {
     color: GLOBAL_STYLES.colors.primary50,
   },
