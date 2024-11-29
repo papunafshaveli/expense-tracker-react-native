@@ -33,7 +33,11 @@ export default function Index() {
               iconName="add"
               color={tintColor}
               size={24}
-              onPress={() => navigation.navigate("ManageExpense")}
+              onPress={() =>
+                navigation.navigate("ManageExpense", {
+                  expenseId: undefined,
+                })
+              }
             />
           ),
         })}
@@ -67,7 +71,12 @@ export default function Index() {
   return (
     <NavigationIndependentTree>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: { backgroundColor: GLOBAL_STYLES.colors.primary500 },
+            headerTintColor: "white",
+          }}
+        >
           <Stack.Screen
             name="ExpensesOverview"
             component={ExpensesOverview}
@@ -75,7 +84,13 @@ export default function Index() {
               headerShown: false,
             }}
           />
-          <Stack.Screen name="ManageExpense" component={ManageExpense} />
+          <Stack.Screen
+            name="ManageExpense"
+            component={ManageExpense}
+            options={{
+              presentation: "modal",
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </NavigationIndependentTree>

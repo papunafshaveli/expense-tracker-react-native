@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { Pressable, View } from "react-native";
+import { Pressable, View, Text } from "react-native";
 import { styles } from "./styles";
 
 type IconButtonProps = {
@@ -8,6 +8,7 @@ type IconButtonProps = {
   size: number;
   color?: string;
   onPress: () => void;
+  text?: string;
 };
 
 const IconButton: React.FC<IconButtonProps> = ({
@@ -15,6 +16,7 @@ const IconButton: React.FC<IconButtonProps> = ({
   size,
   color,
   onPress,
+  text,
 }) => {
   return (
     <Pressable
@@ -23,6 +25,7 @@ const IconButton: React.FC<IconButtonProps> = ({
     >
       <View style={styles.btnContainer}>
         <Ionicons name={iconName} size={size} color={color} />
+        <Text style={styles.btnText}>{text}</Text>
       </View>
     </Pressable>
   );

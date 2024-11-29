@@ -11,6 +11,7 @@ type ExpenseItemProps = {
   description: string;
   amount: number;
   date: Date;
+  id: string;
 };
 
 type StackParamList = {
@@ -26,6 +27,7 @@ const ExpenseItem: React.FC<ExpenseItemProps> = ({
   description,
   amount,
   date,
+  id,
 }) => {
   const formatDate = getFormattedDate(date);
 
@@ -33,7 +35,7 @@ const ExpenseItem: React.FC<ExpenseItemProps> = ({
 
   const onExpenseItemPress = () => {
     navigation.navigate("ManageExpense", {
-      expenseId: "1",
+      expenseId: id,
     });
   };
 
